@@ -346,6 +346,11 @@ class Step extends Evented {
       footer.appendChild(buttons);
     }
 
+    if (this.options.footerText) {
+      let footerText = createFromHTML('<span>' + this.options.footerText + '</span>');
+      footer.appendChild(footerText);
+    }
+
     content.appendChild(footer);
 
     document.body.appendChild(this.el);

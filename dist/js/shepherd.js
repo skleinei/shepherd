@@ -400,6 +400,11 @@ var Step = (function (_Evented) {
         })();
       }
 
+      if (this.options.footerText) {
+        var footerText = createFromHTML('<span>' + this.options.footerText + '</span>');
+        footer.appendChild(footerText);
+      }
+
       content.appendChild(footer);
 
       document.body.appendChild(this.el);
