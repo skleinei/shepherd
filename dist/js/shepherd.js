@@ -386,6 +386,11 @@ var Step = (function (_Evented) {
 
       var footer = document.createElement('footer');
 
+      if (this.options.footerText) {
+        var footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
+        footer.appendChild(footerText);
+      }
+
       if (this.options.buttons) {
         (function () {
           var buttons = createFromHTML("<ul class='shepherd-buttons'></ul>");
@@ -398,11 +403,6 @@ var Step = (function (_Evented) {
 
           footer.appendChild(buttons);
         })();
-      }
-
-      if (this.options.footerText) {
-        var footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
-        footer.appendChild(footerText);
       }
 
       content.appendChild(footer);

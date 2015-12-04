@@ -334,6 +334,11 @@ class Step extends Evented {
 
     const footer = document.createElement('footer');
 
+    if (this.options.footerText) {
+      let footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
+      footer.appendChild(footerText);
+    }
+
     if (this.options.buttons) {
       let buttons = createFromHTML("<ul class='shepherd-buttons'></ul>");
 
@@ -344,11 +349,6 @@ class Step extends Evented {
       });
 
       footer.appendChild(buttons);
-    }
-
-    if (this.options.footerText) {
-      let footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
-      footer.appendChild(footerText);
     }
 
     content.appendChild(footer);
