@@ -401,7 +401,7 @@ var Step = (function (_Evented) {
       }
 
       if (this.options.footerText) {
-        var footerText = createFromHTML('<span>' + this.options.footerText + '</span>');
+        var footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
         footer.appendChild(footerText);
       }
 

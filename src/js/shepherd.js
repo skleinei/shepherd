@@ -347,7 +347,7 @@ class Step extends Evented {
     }
 
     if (this.options.footerText) {
-      let footerText = createFromHTML('<span>' + this.options.footerText + '</span>');
+      let footerText = createFromHTML('<div class="shepherd-footer-text">' + this.options.footerText + '</div>');
       footer.appendChild(footerText);
     }
 
